@@ -37,7 +37,7 @@ func main() {
 		Action: func(ctx context.Context, cmd *cli.Command) error {
 			//We check to see if the path has been passed.
 			if cmd.Args().Len() == 0 {
-				return cli.ShowAppHelp(cmd) 
+				return cli.ShowAppHelp(cmd)
 			}
 
 			path := cmd.Args().Get(0)
@@ -50,7 +50,7 @@ func main() {
 			// Get the formatted size of the path.
 			size, err := code.GetPathSize(path, recursive, human, all)
 			if err != nil {
-				return cli.Exit(err, 1)
+				return cli.Exit(err.Error(), 1)
 			}
 
 			fmt.Printf("%s\t%s\n", size, path)
