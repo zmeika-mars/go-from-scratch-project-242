@@ -37,7 +37,7 @@ func main() {
 		Action: func(ctx context.Context, cmd *cli.Command) error {
 			//We check to see if the path has been passed.
 			if cmd.Args().Len() == 0 {
-				return cmd.Root().Run(ctx, []string{cmd.Root().Name, "-help"})
+				return cli.ShowAppHelp(cmd) 
 			}
 
 			path := cmd.Args().Get(0)
