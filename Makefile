@@ -5,7 +5,7 @@ run:
 	./bin/hexlet-path-size
 
 lint:
-	/Users/lev/go/bin/golangci-lint run	
+	golangci-lint run	
   
 lint-fix:
-	/Users/lev/go/bin/golangci-lint run --fix
+	golangci-lint run --fix
