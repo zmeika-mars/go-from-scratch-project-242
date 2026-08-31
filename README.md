@@ -18,7 +18,7 @@ go build -o bin/hexlet-path-size ./cmd/hexlet-path-size
 ./bin/hexlet-path-size <path>
 ```
 
-## Использование программы 
+## Пример использования программы 
 
 Получение размера файла:
 
