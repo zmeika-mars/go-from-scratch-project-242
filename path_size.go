@@ -7,6 +7,7 @@ import (
 	"strings"
 )
 
+//GetPathSize returns the size of a file or directory in the requested format.
 func GetPathSize(path string, recursive, human, all bool) (string, error) {
 	size, err := getSize(path, recursive, all)
 	if err != nil {
@@ -16,6 +17,7 @@ func GetPathSize(path string, recursive, human, all bool) (string, error) {
 	return formatSize(size, human), nil
 }
 
+//getSize calculates the size of a file or directory.
 func getSize(path string, recursive, all bool) (int64, error) {
 	info, err := os.Stat(path)
 	if err != nil {
@@ -71,7 +73,7 @@ func getSize(path string, recursive, all bool) (int64, error) {
 	return rawSize, nil
 }
 
-// formatSize formats the size according to the humnal flag.
+//formatSize formats a size in bytes as a human-readable string when requested.
 func formatSize(size int64, human bool) string {
 	//If the --human flag is not passed, return the size in bytes
 	if !human {
